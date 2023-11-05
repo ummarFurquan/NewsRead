@@ -29,6 +29,7 @@ const NewsItem = (props) => {
                      >
                       <button  className='btn btn-danger btn-sm mx-4' title="Share to Social">Share<span className='mx-2'><BsShareFill/></span></button>
                      </ShareOnSocial>
+                     
                      <p className="card-text my-3"><small className="text-body-secondary">Author :- {author}</small></p>
                      <p className="card-text"><small className="text-body-secondary">Published On :- {new Date(publishedOn).toLocaleString(undefined, {timeZone :'Asia/Kolkata'})} (IST) </small></p>
                     
