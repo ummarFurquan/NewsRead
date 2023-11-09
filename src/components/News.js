@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import NewsItem from './NewsItem'
 import PropTypes from 'prop-types'
+import ScrollToTop from 'react-scroll-to-top'
 
 export  class News extends Component {
     
@@ -60,12 +61,7 @@ export  class News extends Component {
     this.props.setProgress(100)
     }
     
-    scrollTo = () => {
-        window.scroll({
-            top: 0,
-            behavior: 'smooth'
-        })
-    }
+ 
 
 
     prevClick = async () => {
@@ -99,9 +95,9 @@ export  class News extends Component {
         </div>
         <div className="container d-flex justify-content-between my-4">
             <button disabled={this.state.page <= 1}className='btn btn-dark' onClick={this.prevClick}> &laquo; Previous</button>
-            <button className="btn btn-light" onClick={this.scrollTo}> Back To Top ☝️</button>
             <button disabled={(this.state.page + 1 > Math.ceil(this.state.totalResults/this.props.pageSize))}    className='btn btn-dark' onClick={this.nextClick}>Next &raquo;</button>
         </div>
+        <ScrollToTop smooth color='#FF0000' width='80px' height='30px' title='Scroll To Top'/>
       </div>
     )
   }
