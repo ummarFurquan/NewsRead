@@ -19,11 +19,12 @@ const News = ({ country = 'in', pageSize = 8, category = 'general', setProgress 
         setProgress(50);
         setArticles(parsedData.articles);
         setTotalResults(parsedData.totalResults);
+        setProgress(100);
       } catch (error) {
         console.error('Error fetching data:', error);
       }
       setLoading(false);
-      setProgress(100);
+
     };
 
     fetchData();
@@ -41,11 +42,12 @@ const News = ({ country = 'in', pageSize = 8, category = 'general', setProgress 
         setProgress(50);
         setPage(page + 1);
         setArticles(parsedData.articles);
+        setProgress(100);
       } catch (error) {
         console.error('Error fetching data:', error);
       }
       setLoading(false);
-      setProgress(100);
+      
     }
   };
 
@@ -60,11 +62,12 @@ const News = ({ country = 'in', pageSize = 8, category = 'general', setProgress 
       setProgress(50);
       setPage(page - 1);
       setArticles(parsedData.articles);
+      setProgress(100);
     } catch (error) {
       console.error('Error fetching data:', error);
     }
     setLoading(false);
-    setProgress(100);
+    
   };
 
   return (
