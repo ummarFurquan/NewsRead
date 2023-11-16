@@ -8,6 +8,7 @@ const News = ({ country = 'in', pageSize = 8, category = 'general', setProgress 
   const [loading, setLoading] = useState(false);
   const [page, setPage] = useState(1);
   const [totalResults, setTotalResults] = useState(0);
+  console.log(loading)
   useEffect(() => {
     const fetchData = async () => {
       setProgress(10);
@@ -62,7 +63,7 @@ const News = ({ country = 'in', pageSize = 8, category = 'general', setProgress 
       setProgress(50);
       setPage(page - 1);
       setArticles(parsedData.articles);
-      setProgress(100);
+      setProgress(100); 
     } catch (error) {
       console.error('Error fetching data:', error);
     }
