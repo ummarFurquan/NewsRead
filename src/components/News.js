@@ -8,7 +8,7 @@ const News = ({ country = 'in', pageSize = 8, category = 'general', setProgress 
   const [loading, setLoading] = useState(false);
   const [page, setPage] = useState(1);
   const [totalResults, setTotalResults] = useState(0);
-  console.log(loading)
+  // console.log(loading)
   useEffect(() => {
     const fetchData = async () => {
       setProgress(10);
