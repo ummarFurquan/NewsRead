@@ -11,3 +11,7 @@
 .nav-item:active{
     text-decoration-color: red ;
 }
+
+.light-dark-btn{
+    margin: 4px;
+}

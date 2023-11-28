@@ -95,7 +95,7 @@ export  class News extends Component {
             <button disabled={this.state.page <= 1}className='btn btn-dark' onClick={this.prevClick}> &laquo; Previous</button>
             <button disabled={(this.state.page + 1 > Math.ceil(this.state.totalResults/this.props.pageSize))}    className='btn btn-dark' onClick={this.nextClick}>Next &raquo;</button>
         </div>
-        <ScrollToTop smooth color='#FF0000' width='80px' height='30px' title='Scroll To Top'/>
+        <ScrollToTop smooth color='#FF0000' width='30px' height='30px' title='Scroll To Top'/>
       </div>
     )
   }

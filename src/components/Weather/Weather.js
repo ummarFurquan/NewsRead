@@ -18,7 +18,6 @@ function Weather() {
 
   const api_key = 'dd94f859a0e52d6e4767fddf735f04a7';
 
-
   const search = async () => {
     const element = document.getElementsByClassName('cityInput');
     if (element[0].value === "") {
@@ -33,40 +32,22 @@ function Weather() {
 
     setHumidity(data.main.humidity + "%");
     setWindSpeed(data.wind.speed + " km/h");
-    setTemperature(data.main.temp + " °C");
+    setTemperature(data.main.temp);
+
     setLocation(data.name);
 
-    if(data.weather[0].icon === "01d" || data.weather[0].icon === "01n" ){
-        setWIcon(clear);
+    if (data.main.temp < 10) {
+      setWIcon(snow);
+    } else if (data.main.temp >= 10 && data.main.temp < 20) {
+      setWIcon(drizzle);
+    } else if (data.main.temp >= 20 && data.main.temp < 30) {
+      setWIcon(cloud);
     }
-    else if (data.weather[0].icon === "02d" || data.weather[0].icon === "02n")
-    {
-        setWIcon(cloud)
-    }
-    
-    else if (data.weather[0].icon === "03d" || data.weather[0].icon === "03n")
-    {
-        setWIcon(drizzle)
-    }
-    
-    else if (data.weather[0].icon === "04d" || data.weather[0].icon === "02n")
-    {
-        setWIcon(drizzle)
-    }
-    else if (data.weather[0].icon === "09d" || data.weather[0].icon === "09n")
-    {
-        setWIcon(rain)
-    }
-    else if (data.weather[0].icon === "10d" || data.weather[0].icon === "10n")
-    {
-        setWIcon(rain)
-    }
-    else if (data.weather[0].icon === "13d" || data.weather[0].icon === "13n")
-    {
-        setWIcon(snow)
+    else if(data.main.temp === 10){
+      setWIcon(rain)
     }
     else {
-        setWIcon(clear)
+      setWIcon(clear);
     }
   };
 
@@ -82,9 +63,9 @@ function Weather() {
           </div>
         </div>
         <div className="weather-img">
-          <img src={cloud} alt="cloud" />
+          <img src={WIcon} alt="weather-icon" />
         </div>
-        <div className="weather-temp">{temperature}</div>
+        <div className="weather-temp">{temperature} °C</div>
         <div className="weather-location">{location}</div>
         <div className="data-container">
           <div className="element">
@@ -108,3 +89,4 @@ function Weather() {
 }
 
 export default Weather;
+
