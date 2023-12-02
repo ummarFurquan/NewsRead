@@ -18,7 +18,7 @@ const NewsItem = (props) => {
                  <div className="card-body">
                      <h5 className="card-title" >{title}...</h5>
                      <p className="card-text" >{description}...</p>
-                     <a href={newsUrl} target="_blank" rel="noreferrer"className="btn btn-dark btn-sm">Read More</a>
+                     <a href={newsUrl} target="_blank" rel="noreferrer"className="btn btn-outline-dark btn-sm">Read More</a>
                      
                      <ShareOnSocial
                      textToShare ='Read this News!'
@@ -27,7 +27,7 @@ const NewsItem = (props) => {
                      linkTitle={title}
                      linkMetaDesc={description}   
                      >
-                      <button  className='btn btn-danger btn-sm mx-4' title="Share to Social">Share<span className='mx-2'><BsShareFill/></span></button>
+                      <button  className='btn btn-outline-danger btn-sm mx-4' title="Share to Social">Share<span className='mx-2'><BsShareFill/></span></button>
                      </ShareOnSocial>
 
                      <p className="card-text my-3"><small className="text-body-secondary">Author :- {author}</small></p>
