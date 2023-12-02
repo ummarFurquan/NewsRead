@@ -1,17 +1,11 @@
-import React, {useState} from 'react'
+import React from 'react'
 import {Link} from 'react-router-dom';
 import '../styles/navbar.css'
 
-
 const Navbar = () => {
-  const [toggle, setToggle] = useState('Dark Mode 🌙')
-
-  const ChangeTheme = () => {
-    setToggle( toggle === 'Dark Mode 🌙' ? 'Light Mode 🌞' : 'Dark Mode 🌙')
-  }
   return (
     <div>
-       <nav className="navbar fixed-top  navbar-expand-lg navbar-light bg-light ">
+       <nav className="navbar fixed-top  navbar-expand-lg navbar-dark bg-dark ">
                  <div className="container-fluid">
                      <div className="navbar-brand">🌍NewsRead</div>
                      <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="true" aria-label="Toggle navigation">
@@ -29,9 +23,6 @@ const Navbar = () => {
                          <li className="nav-item"><Link className="nav-link" to="/weather">Weather</Link></li>
                          <li className="nav-item"><Link className="nav-link" to="/about">About Us</Link></li>
                      </ul>
-                     </div>
-                     <div className='light-dark-btn'>
-                      <button onClick={ChangeTheme} className='btn btn-outline-dark'>{toggle}</button>
                      </div>
                  </div>
                  </nav>

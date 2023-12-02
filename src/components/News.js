@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import NewsItem from './NewsItem'
 import PropTypes from 'prop-types'
 import ScrollToTop from 'react-scroll-to-top'
+import style from  '../styles/News.module.css'
 
 export  class News extends Component {
     
@@ -81,6 +82,7 @@ export  class News extends Component {
     }
   render() {
     return (
+        <div className={style.main}>
         <div className="container my-3" >
         <h1 className='text-center' style={{margin:'80px'}}>Top Headlines - <span style={{color:'red'}}>{this.props.category}</span></h1> 
         <div className="row">
@@ -92,10 +94,11 @@ export  class News extends Component {
         })} 
         </div>
         <div className="container d-flex justify-content-between my-4">
-            <button disabled={this.state.page <= 1}className='btn btn-dark' onClick={this.prevClick}> &laquo; Previous</button>
-            <button disabled={(this.state.page + 1 > Math.ceil(this.state.totalResults/this.props.pageSize))}    className='btn btn-dark' onClick={this.nextClick}>Next &raquo;</button>
+            <button disabled={this.state.page <= 1}className='btn btn-outline-dark' onClick={this.prevClick}> &laquo; Previous</button>
+            <button disabled={(this.state.page + 1 > Math.ceil(this.state.totalResults/this.props.pageSize))}    className='btn btn-outline-dark' onClick={this.nextClick}>Next &raquo;</button>
         </div>
-        <ScrollToTop smooth color='#FF0000' width='30px' height='30px' title='Scroll To Top'/>
+        <ScrollToTop className={style.btn} smooth color='#FF0000' width='30px' height='30px'  title='Scroll To Top'/>
+      </div>
       </div>
     )
   }
