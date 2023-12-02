@@ -2,3 +2,9 @@
     margin: 50px;
     margin-right: 0.5px;
 }
+
+.toggle{
+    position: absolute;
+    bottom: 10;
+    left: 0;
+}

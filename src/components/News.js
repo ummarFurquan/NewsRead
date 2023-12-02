@@ -99,6 +99,9 @@ export  class News extends Component {
         </div>
         <ScrollToTop className={style.btn} smooth color='#FF0000' width='30px' height='30px'  title='Scroll To Top'/>
       </div>
+      <div className={style.toggle}>
+        <button className='btn btn-outline-dark'>Toggle theme</button>
+      </div>
       </div>
     )
   }
